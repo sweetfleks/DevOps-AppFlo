@@ -1,0 +1,40 @@
+https://www.dropbox.com/scl/fi/yeq1wo23z1klfhh3aeyf6/lab2.pdf?rlkey=dn2fhpg308ivdwsnbhalifuws&e=2&st=ts7wn5wr&dl=0
+hello
+hello
+Обновление списка пакетов: Перед установкой пакета, обновите список доступных пакетов с помощью команды:
+
+sudo urpmi --auto-update
+
+Bash
+Установка openssh-server: Теперь установите пакет openssh-server командой:
+
+sudo urpmi openssh-server
+
+Bash
+urpmi сам найдет и установит нужный пакет, включая все зависимости.
+
+После установки:
+
+Запуск SSH-сервера: Запустите SSH-сервер:
+
+sudo systemctl start sshd
+
+Bash
+или
+
+sudo service sshd start
+
+Bash
+Автозапуск при загрузке: Чтобы SSH-сервер автоматически запускался при загрузке системы, выполните:
+
+sudo systemctl enable sshd
+
+Bash
+или
+
+sudo service sshd enable
+
+sftp> cd /home/user/documents
+sftp> get report.pdf ~/reports/
+sftp> put ~/new_file.txt /home/user
+sftp> bye
